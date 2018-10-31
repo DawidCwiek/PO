@@ -22,6 +22,14 @@ double Complex::getImag() {
     return imag;
 }
 
+void Complex::setReal(double setreal) {
+    this->real = setreal;
+}
+
+void Complex::setImag(double setimag) {
+    this->imag = setimag;
+}
+
 double Complex::getAmplitude() {
     if (real < 0) {
         return atan(real/imag);
@@ -44,4 +52,9 @@ double Complex::getPhaze() {
     return sqrt((real * real) + (imag * imag));
 }
 
-
+Complex Complex::operator+(Complex& comp){
+	Complex n_c;
+	n_c.setReal(this->real + comp.getReal());
+	n_c.setImag(this->imag + comp.getImag());
+	return n_c;
+}

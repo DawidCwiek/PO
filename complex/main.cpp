@@ -7,8 +7,12 @@
 //
 
 #include <iostream>
+#include "complex.hpp"
 
 int main() {
-   
-    return 0;
+   Complex f = Complex(5, 5);
+   Complex s = Complex(2, 3);
+   f = f + s;
+   printf("f = %lf + i%lf", f.getReal(), f.getImag());
+   return 0;
 }

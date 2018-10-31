@@ -17,19 +17,12 @@ private:
     double imag;
 public:
     Complex(double real = 0, double imag = 0);
-    ~Complex();
     double getReal();
     double getImag();
+    void setReal(double number);
+    void setImag(double number);
     double getAmplitude();
     double getPhaze();
-    Complex operator+= (const Complex number);
-    Complex operator-= (const Complex number);
-    Complex operator*= (const Complex number);
-    Complex operator/= (const Complex number);
-    friend Complex operator+ (const Complex first, const Complex secound);
-    friend Complex operator- (const Complex first, const Complex secound);
-    friend Complex operator* (const Complex first, const Complex secound);
-    friend Complex operator/ (const Complex first, const Complex secound);
+    Complex operator+(Complex& );
 };
-
 #endif /* complex_hpp */
