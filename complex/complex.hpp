@@ -24,5 +24,8 @@ public:
     double getAmplitude();
     double getPhaze();
     Complex operator+(Complex& );
+    Complex operator-(Complex& );
+    Complex operator*(Complex& );
+    Complex operator/(Complex& );
 };
 #endif /* complex_hpp */

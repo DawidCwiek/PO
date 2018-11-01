@@ -52,9 +52,31 @@ double Complex::getPhaze() {
     return sqrt((real * real) + (imag * imag));
 }
 
-Complex Complex::operator+(Complex& comp){
-	Complex n_c;
-	n_c.setReal(this->real + comp.getReal());
-	n_c.setImag(this->imag + comp.getImag());
-	return n_c;
+Complex Complex::operator+(Complex& num) {
+	Complex temp;
+	temp.setReal(this->real + num.getReal());
+	temp.setImag(this->imag + num.getImag());
+	return temp;
+}
+
+Complex Complex::operator-(Complex& num) {
+  Complex temp;
+  temp.setReal(this->real - num.getReal());
+  temp.setImag(this->imag - num.getImag());
+  return temp;
+}
+
+Complex Complex::operator*(Complex& num) {
+  Complex temp;
+  temp.setReal(this->real * num.getReal() - this->imag * num.getImag());
+  temp.setImag(this->real * num.getImag() + this->imag * num.getReal());
+  return temp;
+}
+
+Complex Complex::operator/(Complex& num) {
+  Complex temp;
+  double denominator = num.getReal() * num.getReal() + num.getImag() * num.getImag();
+  temp.setReal((this->real * num.getReal() + this->imag * num.getImag() ) / denominator);
+  temp.setImag((this->imag * num.getReal() - this->real * num.getImag() ) / denominator);
+  return temp;
 }
