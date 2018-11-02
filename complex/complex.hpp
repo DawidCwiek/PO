@@ -9,7 +9,7 @@
 #ifndef complex_hpp
 #define complex_hpp
 
-#include <stdio.h>
+#include <iostream>
 
 class Complex {
 private:
@@ -27,5 +27,11 @@ public:
     Complex operator-(Complex& );
     Complex operator*(Complex& );
     Complex operator/(Complex& );
+    Complex& operator+=(Complex& );
+    Complex& operator-=(Complex& );
+    Complex& operator*=(Complex& );
+    Complex& operator/=(Complex& );
+    bool operator==(Complex& );
+    friend std::ostream &operator<<(std::ostream &, Complex &);
 };
 #endif /* complex_hpp */

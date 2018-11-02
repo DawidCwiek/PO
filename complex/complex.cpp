@@ -53,30 +53,70 @@ double Complex::getPhaze() {
 }
 
 Complex Complex::operator+(Complex& num) {
-	Complex temp;
-	temp.setReal(this->real + num.getReal());
-	temp.setImag(this->imag + num.getImag());
-	return temp;
+  	Complex temp;
+  	temp.setReal(this->real + num.getReal());
+  	temp.setImag(this->imag + num.getImag());
+  	return temp;
 }
 
 Complex Complex::operator-(Complex& num) {
-  Complex temp;
-  temp.setReal(this->real - num.getReal());
-  temp.setImag(this->imag - num.getImag());
-  return temp;
+    Complex temp;
+    temp.setReal(this->real - num.getReal());
+    temp.setImag(this->imag - num.getImag());
+    return temp;
 }
 
 Complex Complex::operator*(Complex& num) {
-  Complex temp;
-  temp.setReal(this->real * num.getReal() - this->imag * num.getImag());
-  temp.setImag(this->real * num.getImag() + this->imag * num.getReal());
-  return temp;
+    Complex temp;
+    temp.setReal(this->real * num.getReal() - this->imag * num.getImag());
+    temp.setImag(this->real * num.getImag() + this->imag * num.getReal());
+    return temp;
 }
 
 Complex Complex::operator/(Complex& num) {
-  Complex temp;
-  double denominator = num.getReal() * num.getReal() + num.getImag() * num.getImag();
-  temp.setReal((this->real * num.getReal() + this->imag * num.getImag() ) / denominator);
-  temp.setImag((this->imag * num.getReal() - this->real * num.getImag() ) / denominator);
-  return temp;
+    Complex temp;
+    double denominator = num.getReal() * num.getReal() + num.getImag() * num.getImag();
+    temp.setReal((this->real * num.getReal() + this->imag * num.getImag() ) / denominator);
+    temp.setImag((this->imag * num.getReal() - this->real * num.getImag() ) / denominator);
+    return temp;
+}
+
+Complex& Complex::operator+=(Complex& num) {
+    this->real += num.getReal();
+    this->imag += num.getImag();
+    return *this;
+}
+
+Complex& Complex::operator-=(Complex& num) {
+    this->real -= num.getReal();
+    this->imag -= num.getImag();
+    return *this;
+}
+
+Complex& Complex::operator*=(Complex& num) {
+    this->real *= num.getReal() - this->imag * num.getImag();
+    this->real *= num.getImag() + this->imag * num.getReal();
+    return *this;
+}
+
+Complex& Complex::operator/=(Complex& num) {
+    double denominator = num.getReal() * num.getReal() + num.getImag() * num.getImag();
+    this->real = (this->real * num.getReal() + this->imag * num.getImag() ) / denominator;
+    this->real = (this->imag * num.getReal() - this->real * num.getImag() ) / denominator;
+    return *this;
+}
+
+bool Complex::operator==(Complex& num) {
+    if(this->real == num.getReal() && this->imag == num.getImag()) {
+        return true;
+    }
+    else
+        return false;
+}
+
+std::ostream& operator<<(std::ostream &out, Complex &num) {
+    if(num.getImag() < 0) {
+        return out << num.getReal() << " - i" << num.getImag() * -1;
+    }
+    return out << num.getReal() << " + i" << num.getImag();
 }
