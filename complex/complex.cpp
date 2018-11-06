@@ -86,8 +86,8 @@ Complex& Complex::operator-=(Complex& num) {
 }
 
 Complex& Complex::operator*=(Complex& num) {
-    this->real *= num.getReal() - this->imag * num.getImag();
-    this->real *= num.getImag() + this->imag * num.getReal();
+    this->real *= (num.getReal() - this->imag * num.getImag());
+    this->imag *= (num.getImag() + this->imag * num.getReal());
     return *this;
 }
 
