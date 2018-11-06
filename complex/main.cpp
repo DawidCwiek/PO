@@ -3,9 +3,9 @@
 
 int main() {
    Complex f = Complex(5, -3);
-   //Complex s = Complex(-2, -6);
-   //s = s - f;
-   //f /= s *= s;
-   std::cout << f;
+   Complex s = Complex(-2, -6);
+   Complex e = Complex(4, 4);
+   f += s += e;
+   std::cout<< f << "\n" << s << "\n" << e;
    return 0;
 }

@@ -1,11 +1,3 @@
-//
-//  complex.cpp
-//  CPP
-//
-//  Created by Dawid Ćwiek on 24.10.2018.
-//  Copyright © 2018 Dawid Ćwiek. All rights reserved.
-//
-
 #include "complex.hpp"
 #include <math.h>
 
@@ -119,4 +111,77 @@ std::ostream& operator<<(std::ostream &out, Complex &num) {
         return out << num.getReal() << " - i" << num.getImag() * -1;
     }
     return out << num.getReal() << " + i" << num.getImag();
+}
+
+Complex operator+(int i_num, Complex &num) {
+    Complex temp;
+    temp.real = num.getReal() + i_num;
+    temp.imag = num.getImag();
+    return temp;
+}
+
+Complex operator+(Complex& num, int i_num) {
+    Complex temp;
+    temp.real = num.getReal() + i_num;
+    temp.imag = num.getImag();
+    return temp;
+}
+
+Complex operator-(int i_num, Complex &num) {
+    Complex temp;
+    temp.real = num.getReal() - i_num;
+    temp.imag = num.getImag();
+    return temp;
+}
+
+Complex operator-(Complex &num, int i_num) {
+    Complex temp;
+    temp.real = i_num - num.getReal();
+    temp.imag = num.getImag() * -1;
+    return temp;
+}
+
+Complex operator*(int i_num, Complex &num) {
+    Complex temp;
+    temp.real = num.getReal() * i_num;
+    temp.imag = num.getImag() * i_num;
+    return temp;
+}
+
+Complex operator*(Complex &num, int i_num) {
+    Complex temp;
+    temp.real = num.getReal() * i_num;
+    temp.imag = num.getImag() * i_num;
+    return temp;
+}
+
+Complex operator/(int i_num, Complex &num) {
+  Complex temp;
+  double denominator = num.getReal() * num.getReal() + num.getImag() * num.getImag();
+  temp.real = i_num * num.getReal() / denominator;
+  temp.imag = -i_num * num.getImag() / denominator;
+  return temp;
+}
+
+Complex operator/(Complex &num, int i_num) {
+    Complex temp;
+    temp.real = num.getReal() / i_num;
+    temp.imag = num.getImag() / i_num;
+    return temp;
+}
+
+bool operator==(Complex& num, int i_num) {
+    if(num.real == i_num && num.imag == 0) {
+        return true;
+    }
+    else
+        return false;
+}
+
+bool operator==(int i_num, Complex& num) {
+    if(num.real == i_num && num.imag == 0) {
+        return true;
+    }
+    else
+        return false;
 }
