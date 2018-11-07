@@ -15,33 +15,29 @@ class Complex {
 private:
     double real;
     double imag;
-    friend Complex operator+(int, Complex& );
-    friend Complex operator+(Complex&, int );
-    friend Complex operator-(int, Complex& );
-    friend Complex operator-(Complex&, int );
-    friend Complex operator*(int, Complex& );
-    friend Complex operator*(Complex&, int );
-    friend Complex operator/(int, Complex& );
-    friend Complex operator/(Complex&, int );
-    friend bool operator==(int, Complex& );
-    friend bool operator==(Complex&, int );
 public:
-    Complex(double real = 0, double imag = 0);
-    double getReal();
-    double getImag();
+    friend Complex operator+(double d_num, const Complex& num);
+    friend Complex operator-(double d_num, const Complex& num);
+    friend Complex operator*(double d_num, const Complex& num);
+    friend Complex operator/(double d_num, const Complex& num);
+    friend bool operator==(double d_num, const Complex& num);
+
+	Complex(double real = 0, double imag = 0);
+    double getReal() const;
+    double getImag() const;
     void setReal(double number);
     void setImag(double number);
     double getAmplitude();
     double getPhaze();
-    Complex operator+(Complex& );
-    Complex operator-(Complex& );
-    Complex operator*(Complex& );
-    Complex operator/(Complex& );
-    Complex& operator+=(Complex& );
-    Complex& operator-=(Complex& );
-    Complex& operator*=(Complex& );
-    Complex& operator/=(Complex& );
-    bool operator==(Complex& );
-    friend std::ostream &operator<<(std::ostream&, Complex& );
+    Complex operator+(const Complex& num);
+    Complex operator-(const Complex& num);
+    Complex operator*(const Complex& num);
+    Complex operator/(const Complex& num);
+    Complex& operator+=(const Complex& num);
+    Complex& operator-=(const Complex& num);
+    Complex& operator*=(const Complex& num);
+    Complex& operator/=(const Complex& num);
+    bool operator==(const Complex& num);
+    friend std::ostream &operator<<(std::ostream&, const Complex& num);
 };
 #endif /* complex_hpp */

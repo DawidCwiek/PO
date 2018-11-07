@@ -25,5 +25,10 @@ int main() {
    std::cout<< "Phaze: " << y.getPhaze() << "\n";
    std::cout<< "Phaze: " << z.getPhaze() << "\n";
    std::cout<< "Phaze: " << i.getPhaze() << "\n";
+   
+   Complex s = Complex(2, 2);
+   
+   a = s + 5;
+    std::cout<< "test: " << a << "\n";
    return 0;
 }
