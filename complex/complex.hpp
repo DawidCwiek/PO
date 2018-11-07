@@ -29,10 +29,10 @@ public:
     void setImag(double number);
     double getAmplitude();
     double getPhaze();
-    Complex operator+(const Complex& num);
-    Complex operator-(const Complex& num);
-    Complex operator*(const Complex& num);
-    Complex operator/(const Complex& num);
+    Complex operator+(const Complex& num) const;
+    Complex operator-(const Complex& num) const;
+    Complex operator*(const Complex& num) const;
+    Complex operator/(const Complex& num) const;
     Complex& operator+=(const Complex& num);
     Complex& operator-=(const Complex& num);
     Complex& operator*=(const Complex& num);
