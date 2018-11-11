@@ -61,7 +61,7 @@ std::ostream& operator<<(std::ostream &out, const Poly& poly) {
     string txt = "";
     for(auto i = poly.factor.end(); i < poly.factor.begin();) {
         std::stringstream txt_ss;
-        if((*i).secound != 0) {
+        if((*i).second != 0) {
             txt_ss << (*i).second;
             txt += txt_ss.str();
             if((*i).first == 0) {
