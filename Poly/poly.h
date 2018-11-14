@@ -14,7 +14,7 @@ public:
   friend Poly operator+ (const Poly& poly1, const Poly& poly2);
   friend Poly operator- (const Poly& poly1, const Poly& poly2);
   friend Poly operator* (const Poly& poly1, const Poly& poly2);
-  friend Poly operator- (const Poly& poly);
+  Poly operator- () const;
   friend std::ostream &operator<< (std::ostream&, const Poly& poly);
 };
 

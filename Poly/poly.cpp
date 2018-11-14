@@ -54,9 +54,9 @@ Poly operator* (const Poly& poly1, const Poly& poly2){
     return temp;
 }
 
-Poly operator- (const Poly& poly) {
+Poly Poly::operator- () const {
     Poly temp;
-    for(map<int, double>::const_iterator i = poly.factor.begin(); i != poly.factor.end(); ++i) {
+    for(map<int, double>::const_iterator i = factor.begin(); i != factor.end(); ++i) {
         temp.factor[(*i).first] = (*i).second * -1;
     }
     return temp;
