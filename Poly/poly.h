@@ -5,15 +5,15 @@
 
 class Poly {
 private:
-    double x;
+    //double x;
 public:
   Poly(double new_x = 0);
   std::map<int, double> factor;
   double& operator[] (int power);
   double operator() (double val_x);
-  Poly operator+ (const Poly& poly) const;
-  Poly operator- (const Poly& poly) const;
-  Poly operator* (const Poly& poly) const;
+  friend Poly operator+ (const Poly& poly1, const Poly& poly2);
+  friend Poly operator- (const Poly& poly1, const Poly& poly2);
+  friend Poly operator* (const Poly& poly1, const Poly& poly2);
   friend Poly operator- (const Poly& poly);
   friend std::ostream &operator<< (std::ostream&, const Poly& poly);
 };

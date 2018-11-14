@@ -39,7 +39,7 @@ int main() {
 	p3 = p1 * p2;														// Multiply p1 by p2
 	cout << "Product of polynomials p1 and p2: " << p3 << endl;
 
-	p3 = 2 * p1;														// Multiply p1 by 2
+	p3 = 2 * p1 ;														// Multiply p1 by 2
 	cout << "Polynomial p1 multiplied by 2: " << p3 << endl;
 
 	p3 = -p2;															// Calculate negation of p2
@@ -47,4 +47,14 @@ int main() {
 
 	double val = p1(1.5);												// Calculate value of p1 at point 1.5
 	cout << "Value of polynomial p1 at point 1.5: " << val << endl;
+
+  cout << endl<< endl << endl;
+  Poly p4 = 3;														// Declare object representing polynomial p2 = 5
+	p4[1] = 2;
+  cout << "Polynomial p4: " << p4 << endl;
+  Poly p5 = 4;														// Declare object representing polynomial p2 = 5
+	p5[2] = 1;
+  cout << "Polynomial p5: " << p5 << endl;
+  Poly p6 = p4 * p5;
+  cout << "Polynomial p6: " << p6 << endl;
 }
