@@ -80,7 +80,7 @@ inline rcstring::rcstring() {
 
 inline rcstring::rcstring(const rcstring& x) {
     x.data->n++;
-    data=x.data;
+    data = x.data;
 }
 inline rcstring::~rcstring() {
     if(--data->n == 0) {
@@ -153,7 +153,7 @@ int rcstring::convertToInteger() {
 void rcstring::convertToLowercase() {
     int i = 0;
     while(data->s[i++]) {
-        data->s[i] = tolower(data->s[i]);
+        data->s[i - 1] = tolower(data->s[i - 1]);
     }
 }
 

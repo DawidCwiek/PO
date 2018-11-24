@@ -24,11 +24,13 @@ int main() {
     d += "15";
     cout << d << endl; //aula15
 
-    /*cout << d[3] << endl; //a
+    cout << d[3] << endl; //a
     d[3] = 'b';
+
     cout << d << endl; //aulb15
     d[2] = d[1] = d[0];
+
     cout << d << endl; //aaab15
-    */
+
     return 0;
 }
