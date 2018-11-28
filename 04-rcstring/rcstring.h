@@ -4,6 +4,7 @@
 #include <stdio.h>
 //#include <malloc.h>
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 class rcstring {

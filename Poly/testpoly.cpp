@@ -48,7 +48,7 @@ int main() {
 	double val = p1(1.5);												// Calculate value of p1 at point 1.5
 	cout << "Value of polynomial p1 at point 1.5: " << val << endl;
 
-  cout << endl<< endl << endl;
+  /*cout << endl<< endl << endl;
   Poly p4 = 3;														// Declare object representing polynomial p2 = 5
 	p4[1] = 2;
   cout << "Polynomial p4: " << p4 << endl;
@@ -56,5 +56,5 @@ int main() {
 	p5[2] = 1;
   cout << "Polynomial p5: " << p5 << endl;
   Poly p6 = p4 * p5;
-  cout << "Polynomial p6: " << p6 << endl;
+  cout << "Polynomial p6: " << p6 << endl;*/
 }
