@@ -4,6 +4,7 @@
 #include <stdio.h>
 //#include <malloc.h>
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 class rcstring {
@@ -159,6 +160,7 @@ void rcstring::convertToLowercase() {
     while(data->s[i++]) {
         data->s[i - 1] = tolower(data->s[i - 1]);
     }
+    data->n--;
 }
 
 rcstring rcstring::generateSubstring(int len) {

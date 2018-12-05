@@ -4,8 +4,7 @@
 #include <map>
 
 class Poly {
-private:
-    //double x;
+
 public:
   Poly(double new_x = 0);
   std::map<int, double> factor;

@@ -23,10 +23,7 @@ double Poly::operator() (double val_x) {
 }
 
 Poly operator+ (const Poly& poly1, const Poly& poly2) {
-    Poly temp;
-    for(map<int, double>::const_iterator i = poly1.factor.begin(); i != poly1.factor.end(); ++i) {
-        temp.factor[(*i).first] = (*i).second;
-    }
+    Poly temp = poly1;
     for(map<int, double>::const_iterator i = poly2.factor.begin(); i != poly2.factor.end(); ++i) {
         temp.factor[(*i).first] += (*i).second;
     }
@@ -34,11 +31,8 @@ Poly operator+ (const Poly& poly1, const Poly& poly2) {
 }
 
 Poly operator- (const Poly& poly1, const Poly& poly2) {
-    Poly temp;
-    for(map<int, double>::const_iterator i = poly1.factor.begin(); i != poly1.factor.end(); ++i) {
-        temp.factor[(*i).first] = (*i).second;
-    }
-    for(map<int, double>::const_iterator  i = poly2.factor.begin(); i != poly2.factor.end(); ++i) {
+    Poly temp = poly1;
+    map<int, double>::const_iterator  i = poly2.factor.begin(); i != poly2.factor.end(); ++i) {
         temp.factor[(*i).first] -= (*i).second;
     }
     return temp;
