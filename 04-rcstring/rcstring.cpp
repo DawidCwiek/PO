@@ -1,7 +1,7 @@
 #include "rcstring.h"
 
 int main() {
-    rcstring a, b, c, x;
+    /*rcstring a, b, c, x;
     a = "bk 10";
     b = "ala MA kota";
     cout << a << " " << b << endl; // 10 ala ma kota
@@ -30,7 +30,13 @@ int main() {
     cout << d << endl; //aulb15
     d[2] = d[1] = d[0];
 
-    cout << d << endl; //aaab15
-
+    cout << d << endl; //aaab15*/
+    rcstring A, B, C;
+    A = "Ala Ma Kota";
+    B = C = A;
+    A.convertToLowercase();
+    cout << A << endl;
+    cout << B << endl;
+    cout << C << endl;
     return 0;
 }

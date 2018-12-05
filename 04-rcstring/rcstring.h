@@ -93,7 +93,7 @@ rcstring& rcstring::operator=(const rcstring & x) {
     if(--data->n == 0) {
         delete data;
     }
-    data=x.data;
+    data = x.data;
     return *this;
 }
 
@@ -152,6 +152,10 @@ int rcstring::convertToInteger() {
 
 void rcstring::convertToLowercase() {
     int i = 0;
+    if(data->n > 1) {
+        data->n--;
+        data = data->detach();
+    }
     while(data->s[i++]) {
         data->s[i - 1] = tolower(data->s[i - 1]);
     }
@@ -159,12 +163,15 @@ void rcstring::convertToLowercase() {
 
 rcstring rcstring::generateSubstring(int len) {
     int i;
-    rcstring new_string = "";
-    new_string.data->size = 0;
-    for(i = 0; i < len; i++){
-        new_string.data->s[i] = data->s[i];
-        new_string.data->size++;
+    char *temp;
+    temp = new char[len + 1];
+    for(i = 0; i < len; i++) {
+        *(temp + i) = data->s[i];
     }
+    *(temp + i) = '\0';
+    rcstring new_string = temp;
+    new_string.data->size = len + 1;
+    delete temp;
     return new_string;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
