@@ -29,6 +29,7 @@ public:
     void write(unsigned int i, char c);
     char operator[](unsigned int i) const;
     char& operator[](unsigned int i);
+    void showN();
 };
 
 struct rcstring::rctext {
@@ -147,6 +148,10 @@ inline void rcstring::write(unsigned int i, char c) {
     data->s[i] = c;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+void rcstring::showN() {
+    cout << "size = " << data->n <<endl;
+}
+
 int rcstring::convertToInteger() {
     return atoi(data->s);
 }
@@ -154,13 +159,11 @@ int rcstring::convertToInteger() {
 void rcstring::convertToLowercase() {
     int i = 0;
     if(data->n > 1) {
-        data->n--;
         data = data->detach();
     }
     while(data->s[i++]) {
         data->s[i - 1] = tolower(data->s[i - 1]);
     }
-    data->n--;
 }
 
 rcstring rcstring::generateSubstring(int len) {
