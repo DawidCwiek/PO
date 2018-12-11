@@ -34,11 +34,11 @@ private:
 
 class assocTab {
 
-private:
+protected:
     node *head;
     void insert(const char *key, int value);
     void clear();
-    node *find(const char *key) const;
+    virtual node *find(const char *key) const;
     void swap(assocTab & tab);
 public:
     assocTab();
@@ -46,6 +46,12 @@ public:
     assocTab (const assocTab & l);
     assocTab& operator= (const assocTab & tab);
     int &operator[] (const char * str);
+};
+
+class secoundAssocTab : public assocTab {
+public:
+    secoundAssocTab(): assocTab() {};
+	node *find(const char *key) const;
 };
 
 #endif /* __ASSOCTAB_H__ */

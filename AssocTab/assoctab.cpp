@@ -77,3 +77,14 @@ assocTab::assocTab (const assocTab & tab) {
         throw;
     }
 }
+
+node *secoundAssocTab::find(const char *key) const {
+    node * temp = head;
+    while(temp) {
+        if(!strcasecmp(temp->key, key)) {
+            return temp;
+        }
+        temp = temp->next;
+    }
+    return NULL;
+}
