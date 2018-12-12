@@ -24,10 +24,18 @@ assocTab::~assocTab() {
     clear();
 }
 
+int assocTab::pom(const char *str, const char *key) const {
+    return !strcmp(str, key);
+}
+
+int secoundAssocTab::pom(const char *str, const char *key) const {
+    return !strcasecmp(str, key);
+}
+
 node *assocTab::find(const char *key) const {
     node * temp = head;
     while(temp) {
-        if(!strcmp(temp->key, key)) {
+        if(pom(temp->key, key)) {
             return temp;
         }
         temp = temp->next;
@@ -78,7 +86,9 @@ assocTab::assocTab (const assocTab & tab) {
     }
 }
 
-node *secoundAssocTab::find(const char *key) const {
+
+
+/*node *secoundAssocTab::find(const char *key) const {
     node * temp = head;
     while(temp) {
         if(!strcasecmp(temp->key, key)) {
@@ -87,4 +97,4 @@ node *secoundAssocTab::find(const char *key) const {
         temp = temp->next;
     }
     return NULL;
-}
+}*/

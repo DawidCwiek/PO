@@ -36,9 +36,10 @@ class assocTab {
 
 protected:
     node *head;
-    void insert(const char *key, int value);
+    void insert(const char *str, int value);
     void clear();
-    virtual node *find(const char *key) const;
+    node *find(const char *key) const;
+    virtual int pom(const char *str, const char *key) const;
     void swap(assocTab & tab);
 public:
     assocTab();
@@ -51,7 +52,8 @@ public:
 class secoundAssocTab : public assocTab {
 public:
     secoundAssocTab(): assocTab() {};
-	node *find(const char *key) const;
+    //node *find(const char *key) const;
+    int pom(const char *str, const char *key) const;
 };
 
 #endif /* __ASSOCTAB_H__ */

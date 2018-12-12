@@ -32,7 +32,7 @@ int main() {
 
     cout << d << endl; //aaab15*/
    
-
+    cout << "testujemy convertToLowercase"<< endl;
     rcstring A, B, C;
     A = "Ala Ma Kota";
     C = B = A;
@@ -50,7 +50,7 @@ int main() {
     A.showN();
     B.showN();
     C.showN();
-    
+    cout << endl << "testujemy convertToInteger"<< endl;
     rcstring X, Y, Z;
     X = "7 gorach 5 3 sie Rzym";
     Z = Y = X;
@@ -64,7 +64,7 @@ int main() {
     X.showN();
     Y.showN();
     Z.showN();
-    
+    cout << endl << "testujemy generateSubstring"<< endl;
     X = "Stringi maleja bojem sie";
     Z = Y = X;
     Z = X.generateSubstring(5);
