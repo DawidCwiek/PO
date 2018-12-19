@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "ile razy chcesz uzyc cdrom"
+read -e 
+
+i=1
+while [ $i -le $REPLY ]
+do
+	eject cdrom
+	eject cdrom -t
+	i=$(( $i + 1 ))
+done
